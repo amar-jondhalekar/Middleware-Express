@@ -13,6 +13,7 @@ const loggingMiddleware = function(req, res, next){
     console.log('Logging');
     next();
 }
+// loadinf middleware into application 
 app.use(loggingMiddleware);
 
 const authMiddleware = function(req, res, next){
