@@ -8,20 +8,24 @@ app.use(express.json());
 
 // middleware : logging, authentication, validation 
 
+// creation of a middleware 
 const loggingMiddleware = function(req, res, next){
     console.log('Logging');
     next();
 }
+app.use(loggingMiddleware);
 
 const authMiddleware = function(req, res, next){
     console.log('Authentication');
     next();
 }
+app.use(authMiddleware);
 
 const validationMiddleware = function(req, res, next){
     console.log('Validation');
     next();
 }
+app.use(validationMiddleware);
 
 app.get('/', (req, res) => {
     console.log(req.body);
