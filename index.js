@@ -18,6 +18,7 @@ app.use(loggingMiddleware);
 
 const authMiddleware = function(req, res, next){
     console.log('Authentication');
+    // res.send('Authentication end!');
     next();
 }
 app.use(authMiddleware);
@@ -29,6 +30,7 @@ const validationMiddleware = function(req, res, next){
 app.use(validationMiddleware);
 
 app.get('/', (req, res) => {
+    console.log('I am a route handler');
     console.log(req.body);
     res.send('Hello World!');
 })
