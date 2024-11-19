@@ -44,4 +44,15 @@ const isAdmin = function(req, res, next){
 
 // routes
 
+router.get('/student', auth, isStudent, (req, res) => {
+    console.log("I am inside student route");
+    res.send("Students specific page");
+})
+
+router.get('/admin', auth, isAdmin, (req, res) => {
+    console.log("I am inside admin route");
+    res.send("Admin specific page");
+})
+
+
 module.exports = router;
